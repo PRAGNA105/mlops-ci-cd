@@ -30,7 +30,7 @@ jobs:
         run: python train.py
 
       - name: Run pytest
-        run: pytest
+        run: PYTHONPATH=. pytest
 
       - name: Build Docker image
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/iris-fastapi-app:latest .
